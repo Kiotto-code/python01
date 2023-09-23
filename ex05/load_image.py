@@ -8,7 +8,7 @@ def ft_load(path: str) -> list:
     assert isinstance(path, str), 'path must be a string'
     assert path.endswith(('.jpg', 'jpeg', 'png')), 'path must be a png file'
 
-    img = Image.open(path)
+    img = plt.imread(path)
     pixels = np.array(img)
 
     return pixels

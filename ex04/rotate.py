@@ -1,5 +1,5 @@
 from load_image import zoom, ft_load
-# from PIL import Image
+from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -17,8 +17,9 @@ import numpy as np
 
 def ft_rotate(path: str) -> list:
     # Read the image
+    # image = Image.open(path)
     image = plt.imread(path)
-    print("The shape of the image is: ", image.shape)
+
 
     # Transpose the image (rotate 90 degrees counterclockwise)
     rotated_image = [t for t in zip(*image)]
@@ -27,11 +28,12 @@ def ft_rotate(path: str) -> list:
     rotated_image_array = np.array(rotated_image)
 
     # Save the rotated image
+    plt.axis('off')
     plt.imsave("rotated_image.jpeg", rotated_image_array, cmap="gray")
 
     # Display the rotated image
     plt.imshow(rotated_image_array, cmap="gray")
-    plt.axis('off')
+    plt.axis('on')
     plt.show()
 
     return rotated_image_array
