@@ -1,17 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from load_image import ft_load
-# from PIL import Image
+from PIL import Image
 
 
 def zoom(path: str) -> np.ndarray:
     image_data = plt.imread(path)
     cropped_image_data = image_data[114:514, 452:852, 1]
-    image_3d = np.expand_dims(cropped_image_data, axis=2)
-    # cropped_image = Image.fromarray(cropped_image_data)
-    plt.imshow(cropped_image_data, cmap="gray")
-    plt.axis('off')
-    plt.savefig("cropped_image.jpeg", bbox_inches='tight', pad_inches=0)
+    cropped_image = Image.fromarray(cropped_image_data)
+    image_3d = np.expand_dims(cropped_image, axis=2)
+    resized_image = cropped_image.resize((400, 400))
+    resized_image.save("cropped_image.jpeg")
+    
+    plt.imshow(resized_image, cmap="gray")
     plt.axis('on')
     plt.show()
     return image_3d
