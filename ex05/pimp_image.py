@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def ft_invert(array) -> np.ndarray:
+    """flips the bits the opposite the colors"""
     array = 255 - array
     array = array.astype(np.uint8)
     plt.imshow(array)
@@ -13,6 +14,7 @@ def ft_invert(array) -> np.ndarray:
 
 
 def ft_red(array) -> np.ndarray:
+    """shut the green and blue channels"""
     array = array.astype(np.uint8)
     # print(array[:, :, 1])
     array[:, :, 1] = 0
@@ -24,6 +26,7 @@ def ft_red(array) -> np.ndarray:
 
 
 def ft_green(array) -> np.array:
+    """shut the red and blue channels"""
     array = array.astype(np.uint8)
     # print(array[:, :, 1])
     array[:, :, 0] = 0
@@ -35,6 +38,7 @@ def ft_green(array) -> np.array:
 
 
 def ft_blue(array) -> np.array:
+    """shut the red and green channels"""
     array = array.astype(np.uint8)
     # print(array[:, :, 1])
     array[:, :, 0] = 0
@@ -46,6 +50,7 @@ def ft_blue(array) -> np.array:
 
 
 def ft_grey(array):
+    """make the image grey using the mean of the RGB channels"""
     array = array.astype(np.uint8)
 
     if len(array.shape) == 3 and array.shape[2] == 3:

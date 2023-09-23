@@ -1,10 +1,12 @@
 import numpy as np
 
 
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(height: list[int | float], weight: list[int | float]) -> \
+            list[int | float]:
+    """give the bmi of a person"""
     try:
-        assert type(height) == list, 'height must be a list'
-        assert type(weight) == list, 'weight must be a list'
+        assert type(height) is list, 'height must be a list'
+        assert type(weight) is list, 'weight must be a list'
         assert len(height) == len(weight), \
             'height weight must have the same length'
 

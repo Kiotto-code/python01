@@ -5,13 +5,14 @@ from PIL import Image
 
 
 def zoom(path: str) -> np.ndarray:
+    """crop the image and return a 3d array"""
     image_data = plt.imread(path)
     cropped_image_data = image_data[114:514, 452:852, 1]
     cropped_image = Image.fromarray(cropped_image_data)
     image_3d = np.expand_dims(cropped_image, axis=2)
     resized_image = cropped_image.resize((400, 400))
     resized_image.save("cropped_image.jpeg")
-    
+
     plt.imshow(resized_image, cmap="gray")
     plt.axis('on')
     plt.show()
@@ -33,6 +34,7 @@ def zoom(path: str) -> np.ndarray:
 
 
 def main():
+    “”“subject test”“”
     load_arr = ft_load("animal.jpeg")
     print("The shape of image is: ", load_arr.shape)
     print(load_arr)

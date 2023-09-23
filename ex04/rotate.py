@@ -1,5 +1,4 @@
-from load_image import zoom, ft_load
-from PIL import Image
+from load_image import zoom
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -16,8 +15,7 @@ import numpy as np
 #     return np.array(rotated_image)
 
 def ft_rotate(path: str) -> list:
-    # Read the image
-    # image = Image.open(path)
+    """rotates the image by 90 degrees clockwise, saves it as rotated_image"""
     image = plt.imread(path)
 
     rotated_image = [t for t in zip(*image)]
@@ -34,6 +32,7 @@ def ft_rotate(path: str) -> list:
 
 
 def main():
+    """subject test"""
     zoom_arr = zoom("animal.jpeg")
     print("The shape of the image is: ", zoom_arr.shape)
     print(zoom_arr)

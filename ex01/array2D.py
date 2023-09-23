@@ -2,6 +2,7 @@ import numpy as np
 
 
 def slice_me(family: list, start: int, end: int) -> list:
+    """slice a list and return a new one"""
     try:
         assert isinstance(family, list), 'family must be a list'
         assert isinstance(start, int), 'start must be an integer'
@@ -16,9 +17,6 @@ def slice_me(family: list, start: int, end: int) -> list:
         print("AssertionError", error)
     except Exception as exception:
         print(exception)
-
-
-
 
 # family =[[1.80, 78.4],
 # 		 [2.15, 102.7],

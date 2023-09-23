@@ -4,6 +4,7 @@ from PIL import Image
 
 
 def ft_load(path: str) -> np.ndarray:
+    """load an image from a path and return a list of pixels"""
     assert str is not None, 'path must be a string'
     assert isinstance(path, str), 'path must be a string'
     assert path.endswith(('.jpg', 'jpeg', 'png')), 'path must be a jpg file'
@@ -15,6 +16,7 @@ def ft_load(path: str) -> np.ndarray:
 
 
 def zoom(path: str) -> np.ndarray:
+    """crop the image and return a 3d array"""
     image_data = plt.imread(path)
     cropped_image_data = image_data[114:514, 452:852, 1]
     cropped_image = Image.fromarray(cropped_image_data)
@@ -28,4 +30,3 @@ def zoom(path: str) -> np.ndarray:
     plt.axis('on')
     plt.show()
     return image_3d
-
