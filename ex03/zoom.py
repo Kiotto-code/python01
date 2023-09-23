@@ -34,7 +34,7 @@ def zoom(path: str) -> np.ndarray:
 
 
 def main():
-    “”“subject test”“”
+    """subject test"""
     load_arr = ft_load("animal.jpeg")
     print("The shape of image is: ", load_arr.shape)
     print(load_arr)
