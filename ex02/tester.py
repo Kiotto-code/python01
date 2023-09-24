@@ -1,3 +1,15 @@
 from load_image import ft_load
-print(ft_load("landscape.jpg"))
-# print(ft_load("animal.jpeg"))
+
+
+def main():
+    """Main function"""
+    try:
+        print(ft_load("landscape.jpg"))
+    except AssertionError as error:
+        print(error)
+    except Exception as exception:
+        print(exception)
+
+
+if __name__ == '__main__':
+    main()

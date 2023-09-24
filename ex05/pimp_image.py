@@ -41,6 +41,8 @@ def ft_blue(array) -> np.array:
     """shut the red and green channels"""
     array = array.astype(np.uint8)
     # print(array[:, :, 1])
+    # print("blue" , array[:, :, 0])
+    # print("all", array[:, :, :], "end")
     array[:, :, 0] = 0
     array[:, :, 1] = 0
     plt.imshow(array)
@@ -54,26 +56,16 @@ def ft_grey(array):
     array = array.astype(np.uint8)
 
     if len(array.shape) == 3 and array.shape[2] == 3:
-        # height, width, _ = array.shape
-        # array[:] = np.mean(array, axis=2, keepdims=1)
-        # grey_image = np.array([[np.mean(array[i, row])
-        #                        for i in row] for row in array])
-        print("red", array[:,:,0], "end")
+        # print("red", array[:, :, 0], "end")
         grey_image = np.full(array.shape, 0)
         grey_image[:] = np.mean(array, axis=2, keepdims=True).astype(np.uint8)
-        print("dimtrue",grey_image)
-        # grey_image = np.mean(array, axis=2).astype(np.uint8)
-        # print("dimfalse",grey_image)
-        # grey_image = np.array(array[:, :, :].mean)
-        # print(grey_image)
+        # print("dimtrue", grey_image)
 
         # So, essentially, taking the mean of the RGB channels at each pixel
         # location collapses the color information into a single channel
         # representing brightness, resulting in a grayscale image where each
         # pixel's color is determined by its intensity.
 
-
-        # grey_image = grey_image.reshape(height, width).astype(np.uint8)
         plt.imshow(grey_image)
         plt.axis('off')
         plt.savefig("grey_image1.png", bbox_inches='tight', pad_inches=0)
@@ -85,20 +77,3 @@ def ft_grey(array):
 
 # import numpy as np
 # import matplotlib.pyplot as plt
-
-# def ft_grey(array):
-#     """Convert a color image to grayscale using the mean of the RGB channels."""
-#     array = array.astype(np.uint8)
-
-#     if len(array.shape) == 3 and array.shape[2] == 3:
-#         array[:] = array.mean(axis=2,keepdims=1)
-#         grey_image = array
-
-#         plt.imshow(grey_image)
-#         plt.axis('off')
-#         plt.savefig("ghuh2.png", bbox_inches='tight', pad_inches=0)
-#         plt.show()
-        
-#         return grey_image
-#     else:
-#         raise ValueError("Input array must be a color image with three channels (e.g., RGB).")

@@ -36,7 +36,7 @@ def zoom(path: str) -> np.ndarray:
 def main():
     """subject test"""
     load_arr = ft_load("animal.jpeg")
-    print("The shape of image is: ", load_arr.shape)
+    # print("The shape of image is: ", load_arr.shape)
     print(load_arr)
     zoom_arr = zoom("animal.jpeg")
     print("The new shape after slicing is: ", zoom_arr.shape)

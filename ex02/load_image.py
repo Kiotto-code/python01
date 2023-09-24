@@ -1,5 +1,4 @@
-import numpy as np
-from PIL import Image
+import matplotlib as plt
 
 
 def ft_load(path: str) -> list:
@@ -8,10 +7,8 @@ def ft_load(path: str) -> list:
     assert isinstance(path, str), 'path must be a string'
     assert path.endswith(('.jpg', 'jpeg')), 'path must be a jpg file'
 
-    img = Image.open(path)
-    pixels = np.array(img)
-
-    shape = pixels.shape
+    img = plt.imread(path)
+    shape = img.shape
 
     print("The shape of image is: ", shape)
-    return pixels
+    return img
