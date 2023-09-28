@@ -20,19 +20,6 @@ def ft_load(path: str) -> list:
         return None
 
 
-
-# def zoom(path: str) -> np.ndarray:
-#     """crop the image and return a 3d array"""
-#     image_data = plt.imread(path)
-#     cropped_image_data = image_data[114:514, 452:852, 1]
-#     image_3d = np.expand_dims(cropped_image_data, axis=2)
-#     fig, ax = plt.subplots()
-#     plt.imshow(cropped_image_data, cmap="gray")
-#     ax.axis('off')
-#     fig.savefig("cropped_image.jpeg", bbox_inches='tight', pad_inches=0)
-#     plt.show()
-#     return image_3d
-
 def zoom(path: str) -> np.ndarray:
     """crop the image and return a 3d array"""
     image_data = plt.imread(path)
