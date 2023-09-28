@@ -1,2 +1,9 @@
-__pycache__
-venv
+tester.py
+*.pyc
+venv/
+__pycache__/
+venv/
+flake8
+delete*
+*.csv
+.DS_Store

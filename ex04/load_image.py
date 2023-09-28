@@ -7,7 +7,7 @@ def ft_load(path: str) -> np.ndarray:
     """load an image from a path and return a list of pixels"""
     assert str is not None, 'path must be a string'
     assert isinstance(path, str), 'path must be a string'
-    assert path.endswith(('.jpg', 'jpeg', 'png')), 'path must be jpg/png file'
+    assert path.endswith(('.jpg', '.jpeg', '.png')), 'path must be jpg/png file'
 
     img = plt.imread(path)
     pixels = np.array(img)
@@ -21,9 +21,6 @@ def zoom(path: str) -> np.ndarray:
     cropped_image_data = image_data[114:514, 452:852, 1]
     cropped_image = Image.fromarray(cropped_image_data)
     image_3d = np.expand_dims(cropped_image, axis=2)
-    # plt.imshow(image_3d, cmap="gray")
-    # plt.axis('off')
-    # plt.savefig("cropped_image.jpeg", bbox_inches='tight', pad_inches=0)
     resized_image = cropped_image.resize((400, 400))
     resized_image.save("cropped_image.jpeg")
     plt.imshow(resized_image, cmap="gray")

@@ -11,6 +11,8 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> \
             'height weight must have the same length'
 
         return (np.array(weight) / np.array(height)**2).tolist()
+    except ZeroDivisionError as error:
+        print("ZeroDivisionError", error)
     except AssertionError as error:
         print("AssertionError", error)
     except Exception as exception:
@@ -18,6 +20,7 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> \
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """limit the bmi of a person"""
     try:
         assert isinstance(bmi, list), 'bmi must be a list'
         assert isinstance(limit, int), 'limit must be an integer'
@@ -35,10 +38,3 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         print("AssertionError", error)
     except Exception as exception:
         print(exception)
-
-
-# height = [2.71, 1.15]
-# weight = [165.3, 38.4]
-# bmi = give_bmi(height, weight)
-# print(bmi, type(bmi))
-# print(apply_limit(bmi, 26))

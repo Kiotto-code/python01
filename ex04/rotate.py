@@ -3,17 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-# def ft_rotate(path: str) -> list:
-#     image = plt.imread(path)
-#     # print(image)
-#     rotated_image = [t for t in zip(*image)]
-#     # image_3d = np.expand_dims(rotated_image, axis=2)
-#     plt.imshow(rotated_image, cmap="gray")
-#     # plt.axis('off')
-#     plt.savefig("rotated_image.jpeg", bbox_inches='tight', pad_inches=0)
-#     plt.show()
-#     return np.array(rotated_image)
-
 def ft_rotate(path: str) -> list:
     """rotates the image by 90 degrees clockwise, saves it as rotated_image"""
     image = plt.imread(path)
